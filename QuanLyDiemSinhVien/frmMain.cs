@@ -17,7 +17,7 @@ namespace QuanLyDiemSinhVien
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAdd frm = new frmAdd();
+            frm_ThemSV frm = new frm_ThemSV();
             this.Hide();
             frm.ShowDialog();
             this.Show();
@@ -38,7 +38,7 @@ namespace QuanLyDiemSinhVien
 
         private void btnAddClass_Click(object sender, EventArgs e)
         {
-            frmClass frm = new frmClass();
+            frm_Lop frm = new frm_Lop();
             this.Hide();
             frm.ShowDialog();
             this.Show();

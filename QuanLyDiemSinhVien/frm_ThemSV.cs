@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace QuanLyDiemSinhVien
 {
-    public partial class frmAdd : Form
+    public partial class frm_ThemSV : Form
     {
-        public frmAdd()
+        public frm_ThemSV()
         {
             InitializeComponent();
         }

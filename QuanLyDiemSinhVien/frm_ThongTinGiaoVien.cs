@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyDiemSinhVien
 {
-    public partial class frm_Login : Form
+    public partial class frm_ThongTinGiaoVien : Form
     {
-        public frm_Login()
+        public frm_ThongTinGiaoVien()
         {
             InitializeComponent();
-            cbLoaiTK.SelectedIndex = 0;
-            cbLoaiTKDK.SelectedIndex = 0;
-            cbGTDK.SelectedIndex = 0;
-        }
-
-        private void lb_resetPasss_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace QuanLyDiemSinhVien
 {
-    public partial class frmClass : Form
+    public partial class frm_Lop : Form
     {
-        public frmClass()
+        public frm_Lop()
         {
             InitializeComponent();
         }

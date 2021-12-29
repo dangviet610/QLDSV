@@ -58,23 +58,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAdd.cs">
+    <Compile Include="frm_ThemSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdd.designer.cs">
-      <DependentUpon>frmAdd.cs</DependentUpon>
+    <Compile Include="frm_ThemSV.designer.cs">
+      <DependentUpon>frm_ThemSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClass.cs">
+    <Compile Include="frm_Lop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClass.designer.cs">
-      <DependentUpon>frmClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEdit.designer.cs">
-      <DependentUpon>frmEdit.cs</DependentUpon>
+    <Compile Include="frm_Lop.designer.cs">
+      <DependentUpon>frm_Lop.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -82,23 +76,41 @@
     <Compile Include="frmMain.designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_DiemTheoLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_DiemTheoLop.Designer.cs">
-      <DependentUpon>frm_DiemTheoLop.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_ThemDiem.cs">
+    <Compile Include="frm_DSLopDangDay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ThemDiem.Designer.cs">
-      <DependentUpon>frm_ThemDiem.cs</DependentUpon>
+    <Compile Include="frm_DSLopDangDay.Designer.cs">
+      <DependentUpon>frm_DSLopDangDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Diem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Diem.Designer.cs">
+      <DependentUpon>frm_Diem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ThongTinGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ThongTinGiaoVien.Designer.cs">
+      <DependentUpon>frm_ThongTinGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ThongTinSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ThongTinSinhVien.Designer.cs">
+      <DependentUpon>frm_ThongTinSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_XemDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_XemDiem.Designer.cs">
+      <DependentUpon>frm_XemDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Context.cs" />
     <Compile Include="Model\Diem.cs" />
@@ -111,26 +123,29 @@
     <Compile Include="Model\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAdd.resx">
-      <DependentUpon>frmAdd.cs</DependentUpon>
+    <EmbeddedResource Include="frm_ThemSV.resx">
+      <DependentUpon>frm_ThemSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClass.resx">
-      <DependentUpon>frmClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEdit.resx">
-      <DependentUpon>frmEdit.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Lop.resx">
+      <DependentUpon>frm_Lop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_DiemTheoLop.resx">
-      <DependentUpon>frm_DiemTheoLop.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_ThemDiem.resx">
-      <DependentUpon>frm_ThemDiem.cs</DependentUpon>
+    <EmbeddedResource Include="frm_DSLopDangDay.resx">
+      <DependentUpon>frm_DSLopDangDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Diem.resx">
+      <DependentUpon>frm_Diem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ThongTinGiaoVien.resx">
+      <DependentUpon>frm_ThongTinGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ThongTinSinhVien.resx">
+      <DependentUpon>frm_ThongTinSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
