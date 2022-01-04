@@ -12,8 +12,8 @@ namespace QuanLyDiemSinhVien.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Lop()
         {
-            SinhViens = new HashSet<SinhVien>();
-            GiaoViens = new HashSet<GiaoVien>();
+            PhanLopGiaoViens = new HashSet<PhanLopGiaoVien>();
+            PhanLopSinhViens = new HashSet<PhanLopSinhVien>();
         }
 
         [Key]
@@ -23,9 +23,9 @@ namespace QuanLyDiemSinhVien.Model
         public string Tenlop { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SinhVien> SinhViens { get; set; }
+        public virtual ICollection<PhanLopGiaoVien> PhanLopGiaoViens { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GiaoVien> GiaoViens { get; set; }
+        public virtual ICollection<PhanLopSinhVien> PhanLopSinhViens { get; set; }
     }
 }

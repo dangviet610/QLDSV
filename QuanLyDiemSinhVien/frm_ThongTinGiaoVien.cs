@@ -16,5 +16,9 @@ namespace QuanLyDiemSinhVien
         {
             InitializeComponent();
         }
+        public frm_ThongTinGiaoVien(string Email)
+        {
+            InitializeComponent();
+        }
     }
 }

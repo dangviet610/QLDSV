@@ -6,17 +6,14 @@ namespace QuanLyDiemSinhVien.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("TaiKhoan")]
-    public partial class TaiKhoan
+    [Table("Admin")]
+    public partial class Admin
     {
         [Key]
         [StringLength(50)]
-        public string Email { get; set; }
+        public string Username { get; set; }
 
         [StringLength(50)]
         public string Password { get; set; }
-
-        public int? Role_ID { get; set; }
-
     }
 }

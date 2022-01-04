@@ -8,27 +8,21 @@ using System.Windows.Forms;
 
 namespace QuanLyDiemSinhVien
 {
-    public partial class frmMain : Form
+    public partial class frm_Admin : Form
     {
-        public frmMain()
+        public frm_Admin()
         {
             InitializeComponent();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frm_ThemSV frm = new frm_ThemSV();
-            this.Hide();
-            frm.ShowDialog();
-            this.Show();
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            frmEdit frm = new frmEdit();
-            this.Hide();
-            frm.ShowDialog();
-            this.Show();
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

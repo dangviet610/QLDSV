@@ -12,7 +12,7 @@ namespace QuanLyDiemSinhVien.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GiaoVien()
         {
-            Lops = new HashSet<Lop>();
+            PhanLopGiaoViens = new HashSet<PhanLopGiaoVien>();
         }
 
         [Key]
@@ -29,9 +29,7 @@ namespace QuanLyDiemSinhVien.Model
 
         public byte? Gioitinh { get; set; }
 
-        public int? Role_ID { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lop> Lops { get; set; }
+        public virtual ICollection<PhanLopGiaoVien> PhanLopGiaoViens { get; set; }
     }
 }

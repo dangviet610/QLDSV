@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyDiemSinhVien
 {
-    partial class frmMain
+    partial class frm_Admin
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,6 @@ namespace QuanLyDiemSinhVien
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button15 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -53,10 +52,15 @@ namespace QuanLyDiemSinhVien
             this.button7 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -203,7 +207,6 @@ namespace QuanLyDiemSinhVien
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button15);
-            this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(416, 316);
@@ -214,23 +217,13 @@ namespace QuanLyDiemSinhVien
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(24, 139);
+            this.button15.Location = new System.Drawing.Point(203, 63);
             this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(148, 34);
             this.button15.TabIndex = 20;
             this.button15.Text = "Thêm lớp học mới";
             this.button15.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(203, 63);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(148, 34);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Danh sách tài khoản";
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -319,12 +312,54 @@ namespace QuanLyDiemSinhVien
             this.button8.Text = "Danh sách môn";
             this.button8.UseVisualStyleBackColor = false;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button6);
+            this.groupBox5.Controls.Add(this.button16);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Location = new System.Drawing.Point(805, 81);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(383, 464);
+            this.groupBox5.TabIndex = 23;
+            this.groupBox5.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(203, 63);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(148, 34);
+            this.button6.TabIndex = 20;
+            this.button6.Text = "Danh sách quyền";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button16.Location = new System.Drawing.Point(24, 63);
+            this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(148, 34);
+            this.button16.TabIndex = 18;
+            this.button16.Text = "Danh sách tài khoản";
+            this.button16.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(117, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Quản lý tài khoản";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(813, 573);
+            this.ClientSize = new System.Drawing.Size(1202, 573);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -339,6 +374,8 @@ namespace QuanLyDiemSinhVien
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,7 +398,6 @@ namespace QuanLyDiemSinhVien
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -370,5 +406,9 @@ namespace QuanLyDiemSinhVien
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label6;
     }
 }

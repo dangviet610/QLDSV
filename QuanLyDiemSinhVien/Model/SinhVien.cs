@@ -13,6 +13,7 @@ namespace QuanLyDiemSinhVien.Model
         public SinhVien()
         {
             Diems = new HashSet<Diem>();
+            PhanLopSinhViens = new HashSet<PhanLopSinhVien>();
         }
 
         [Key]
@@ -31,15 +32,12 @@ namespace QuanLyDiemSinhVien.Model
         [Column(TypeName = "date")]
         public DateTime? Ngaysinh { get; set; }
 
-        public int? Malop { get; set; }
-
         public byte? Gioitinh { get; set; }
-
-        public int? Role_ID { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Diem> Diems { get; set; }
 
-        public virtual Lop Lop { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhanLopSinhVien> PhanLopSinhViens { get; set; }
     }
 }

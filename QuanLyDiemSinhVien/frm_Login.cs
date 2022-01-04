@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyDiemSinhVien.Function;
 
 namespace QuanLyDiemSinhVien
 {
@@ -15,14 +16,62 @@ namespace QuanLyDiemSinhVien
         public frm_Login()
         {
             InitializeComponent();
-            cbLoaiTK.SelectedIndex = 0;
             cbLoaiTKDK.SelectedIndex = 0;
             cbGTDK.SelectedIndex = 0;
+            cbLoaiTK.SelectedIndex = 0;
         }
 
         private void lb_resetPasss_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_DangNhap_Click(object sender, EventArgs e)
+        {
+
+            if (!string.IsNullOrEmpty(txtEmail.Text))
+            {
+                if (!string.IsNullOrEmpty(txtPass.Text))
+                {
+                    string type = "sv";
+                    if (cbLoaiTK.SelectedIndex == 0)
+                    {
+                        type = "gv";
+                    }
+                    else
+                        if (cbLoaiTK.SelectedIndex == 2)
+                    {
+                        type = "admin";
+                    }
+                    var up = new f_taikhoan().Login(txtEmail.Text, txtPass.Text,type);
+                    if (!up)
+                    {
+                        MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                    }else
+                     if(type == "admin"){
+                        frm_Admin frm = new frm_Admin();
+                        frm.ShowDialog();
+                    }
+                    else
+                    if (type=="gv"){
+                        frm_ThongTinGiaoVien frm = new frm_ThongTinGiaoVien(txtEmail.Text);
+                        frm.ShowDialog();
+                    }
+                    else
+                    if (type=="sv"){
+                        frm_ThongTinSinhVien frm = new frm_ThongTinSinhVien(txtEmail.Text);
+                        frm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa nhập mật khẩu");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa nhập email");
+            }
         }
     }
 }
