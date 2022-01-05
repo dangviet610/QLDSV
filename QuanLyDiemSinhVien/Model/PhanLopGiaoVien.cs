@@ -9,12 +9,19 @@ namespace QuanLyDiemSinhVien.Model
     [Table("PhanLopGiaoVien")]
     public partial class PhanLopGiaoVien
     {
-        public int ID { get; set; }
-
+        [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Magiaovien { get; set; }
 
+        [Key]
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Malop { get; set; }
 
+        [Key]
+        [Column(Order = 2)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Mamon { get; set; }
 
         public virtual GiaoVien GiaoVien { get; set; }

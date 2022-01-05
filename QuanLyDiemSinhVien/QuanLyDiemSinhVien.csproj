@@ -58,6 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_BangDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_BangDiem.Designer.cs">
+      <DependentUpon>frm_BangDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_LopDangHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_LopDangHoc.Designer.cs">
+      <DependentUpon>frm_LopDangHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_ThemSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,7 @@
     <Compile Include="Model\Diem.cs" />
     <Compile Include="Model\GiaoVien.cs" />
     <Compile Include="Model\Lop.cs" />
+    <Compile Include="Model\Model1.cs" />
     <Compile Include="Model\MonHoc.cs" />
     <Compile Include="Model\PhanLopGiaoVien.cs" />
     <Compile Include="Model\PhanLopSinhVien.cs" />
@@ -131,6 +144,12 @@
     <Compile Include="Model\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_BangDiem.resx">
+      <DependentUpon>frm_BangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_LopDangHoc.resx">
+      <DependentUpon>frm_LopDangHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_ThemSV.resx">
       <DependentUpon>frm_ThemSV.cs</DependentUpon>
     </EmbeddedResource>

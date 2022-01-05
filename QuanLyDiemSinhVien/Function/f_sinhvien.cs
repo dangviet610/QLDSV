@@ -129,7 +129,7 @@ namespace QuanLyDiemSinhVien.Function
         /// </summary>
         /// <param name="masv"></param>
         /// <returns></returns>
-        public List<MonHoc> DSMon(int masv)
+/*        public List<MonHoc> DSMon(int masv)
         {
             var a = db.PhanLopSinhViens.Where(x => x.Masv == masv);
             List<MonHoc> list = new List<MonHoc>();
@@ -138,6 +138,6 @@ namespace QuanLyDiemSinhVien.Function
                 list.Add(new f_monhoc().GetMonHoc(item.Mamon));
             }
             return list;
-        }
+        }*/
     }
 }
