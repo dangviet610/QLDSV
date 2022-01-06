@@ -50,17 +50,23 @@ namespace QuanLyDiemSinhVien
                     }else
                      if(type == "admin"){
                         frm_Admin frm = new frm_Admin();
+                        Hide();
                         frm.ShowDialog();
+                        Show();
                     }
                     else
                     if (type=="gv"){
-                        frm_ThongTinGiaoVien frm = new frm_ThongTinGiaoVien(txtEmail.Text);
+                        frm_GiaoVien frm = new frm_GiaoVien(txtEmail.Text);
+                        Hide();
                         frm.ShowDialog();
+                        Show();
                     }
                     else
                     if (type=="sv"){
-                        frm_ThongTinSinhVien frm = new frm_ThongTinSinhVien(txtEmail.Text);
+                        frm_SinhVien frm = new frm_SinhVien(txtEmail.Text);
+                        Hide();
                         frm.ShowDialog();
+                        Show();
                     }
                 }
                 else

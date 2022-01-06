@@ -1,6 +1,4 @@
-﻿using QuanLyDiemSinhVien.Function;
-using QuanLyDiemSinhVien.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,48 +7,95 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyDiemSinhVien.Model;
+using QuanLyDiemSinhVien.Function;
 
 namespace QuanLyDiemSinhVien
 {
     public partial class frm_ThongTinSinhVien : Form
     {
-        private SinhVien current = new SinhVien();
-        private f_sinhvien function = new f_sinhvien();
+        private int id;
+        private SinhVien sv;
         public frm_ThongTinSinhVien()
         {
             InitializeComponent();
         }
-        public frm_ThongTinSinhVien(string Email)
+        public frm_ThongTinSinhVien(int masv)
         {
             InitializeComponent();
-            current = function.GetSinhVien(Email);
-            lbten.Text = current.Hoten;
-            lbEmail.Text = current.Email;
-            var a = DateTime.Parse(current.Ngaysinh.ToString());
-            lbNgaysinh.Text = a.ToShortDateString();
-            if (current.Gioitinh == 0)
-            {
-                lbGt.Text = "Nữ";
-            }
+            this.id = masv;
+            this.sv = new f_sinhvien().GetSinhVien(masv);
+            txtHoten.Text = sv.Hoten;
+            txtEmail.Text = sv.Email;
+            dpNs.Value = sv.Ngaysinh.Value;
+            if (sv.Gioitinh == 0)
+                rbNu.Checked = true;
             else
-                lbGt.Text = "Nam";
+                rbNam.Checked = true;
         }
 
-        private void btnDangxuat_Click(object sender, EventArgs e)
+        private void btnTrove_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
-        private void btnBangdiem_Click(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-            frm_BangDiem frm = new frm_BangDiem(current.Masv);
-            frm.ShowDialog();
-        }
-
-        private void btnLopdanghoc_Click(object sender, EventArgs e)
-        {
-            frm_LopDangHoc frm = new frm_LopDangHoc(current.Masv);
-            frm.ShowDialog();
+            if(string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtHoten.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin");
+            }
+            else
+            {
+                SinhVien sv = new SinhVien();
+                sv.Masv = id;
+                sv.Email = txtEmail.Text;
+                sv.Hoten = txtHoten.Text;
+                sv.Ngaysinh = dpNs.Value;
+                if (rbNam.Checked)
+                    sv.Gioitinh = 1;
+                else
+                    sv.Gioitinh = 0;
+                if (cbDoimk.Checked)
+                {
+                    if (txtPass.Text != txtRepass.Text)
+                    {
+                        MessageBox.Show("Mật khẩu không khớp");
+                    }
+                    else
+                    if (string.IsNullOrEmpty(txtRepass.Text) || string.IsNullOrEmpty(txtPass.Text))
+                    {
+                        MessageBox.Show("Vui lòng nhập đủ thông tin");
+                    }
+                    else
+                    {
+                        sv.Password = txtPass.Text;
+                        var up = new f_sinhvien().Sua(sv);
+                        if (up)
+                        {
+                            MessageBox.Show("Thành công!");
+                            DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi!");
+                        }
+                    }
+                }
+                else
+                {
+                    var up = new f_sinhvien().Sua(sv);
+                    if(up)
+                    {
+                        MessageBox.Show("Thành công!");
+                        DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi!");
+                    }    
+                }
+            }    
         }
     }
 }

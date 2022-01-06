@@ -281,6 +281,7 @@ namespace QuanLyDiemSinhVien
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(350, 30);
             this.txtEmail.TabIndex = 3;
+            this.txtEmail.Text = "theanh";
             // 
             // txtPass
             // 
@@ -291,6 +292,7 @@ namespace QuanLyDiemSinhVien
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(350, 30);
             this.txtPass.TabIndex = 4;
+            this.txtPass.Text = "123";
             // 
             // btn_DangNhap
             // 

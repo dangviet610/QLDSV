@@ -31,10 +31,10 @@ namespace QuanLyDiemSinhVien
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgDanhSach = new System.Windows.Forms.DataGridView();
-            this.btnBangdiem = new System.Windows.Forms.Button();
-            this.cbSx = new System.Windows.Forms.ComboBox();
             this.mon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBangdiem = new System.Windows.Forms.Button();
+            this.cbSx = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgDanhSach)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +51,8 @@ namespace QuanLyDiemSinhVien
             // 
             this.dgDanhSach.AllowUserToAddRows = false;
             this.dgDanhSach.AllowUserToDeleteRows = false;
-            this.dgDanhSach.BackgroundColor = System.Drawing.Color.Beige;
+            this.dgDanhSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgDanhSach.BackgroundColor = System.Drawing.Color.Azure;
             this.dgDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mon,
@@ -65,6 +66,24 @@ namespace QuanLyDiemSinhVien
             this.dgDanhSach.RowTemplate.Height = 24;
             this.dgDanhSach.Size = new System.Drawing.Size(734, 264);
             this.dgDanhSach.TabIndex = 1;
+            // 
+            // mon
+            // 
+            this.mon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mon.DataPropertyName = "mon";
+            this.mon.HeaderText = "Môn học";
+            this.mon.MinimumWidth = 6;
+            this.mon.Name = "mon";
+            this.mon.ReadOnly = true;
+            // 
+            // diem
+            // 
+            this.diem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.diem.DataPropertyName = "d";
+            this.diem.HeaderText = "Điểm";
+            this.diem.MinimumWidth = 6;
+            this.diem.Name = "diem";
+            this.diem.ReadOnly = true;
             // 
             // btnBangdiem
             // 
@@ -90,24 +109,6 @@ namespace QuanLyDiemSinhVien
             this.cbSx.Size = new System.Drawing.Size(214, 24);
             this.cbSx.TabIndex = 27;
             this.cbSx.SelectedIndexChanged += new System.EventHandler(this.SapXep);
-            // 
-            // mon
-            // 
-            this.mon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mon.DataPropertyName = "mon";
-            this.mon.HeaderText = "Môn học";
-            this.mon.MinimumWidth = 6;
-            this.mon.Name = "mon";
-            this.mon.ReadOnly = true;
-            // 
-            // diem
-            // 
-            this.diem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.diem.DataPropertyName = "d";
-            this.diem.HeaderText = "Điểm";
-            this.diem.MinimumWidth = 6;
-            this.diem.Name = "diem";
-            this.diem.ReadOnly = true;
             // 
             // frm_BangDiem
             // 

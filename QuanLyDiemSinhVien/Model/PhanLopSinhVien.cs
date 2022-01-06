@@ -9,14 +9,14 @@ namespace QuanLyDiemSinhVien.Model
     [Table("PhanLopSinhVien")]
     public partial class PhanLopSinhVien
     {
-        [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ID { get; set; }
+
         public int Masv { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Malop { get; set; }
+
+        public virtual Lop Lop { get; set; }
+
+        public virtual SinhVien SinhVien { get; set; }
     }
 }

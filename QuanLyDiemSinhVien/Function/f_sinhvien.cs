@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace QuanLyDiemSinhVien.Function
 {
+    public class ThongTinLop
+    {
+        public int malop { get; set; }
+        public string tenlop { set; get; }
+        public string tenmon { get; set; }
+        public string gv { set; get; }
+    }
     public class f_sinhvien
     {
         private Context db;
@@ -56,9 +63,11 @@ namespace QuanLyDiemSinhVien.Function
                 else
                 {
                     o.Email = e.Email;
-                    o.Ngaysinh = o.Ngaysinh;
-                    o.Hoten = o.Hoten;
-                    o.Gioitinh = o.Gioitinh;
+                    o.Ngaysinh = e.Ngaysinh;
+                    o.Hoten = e.Hoten;
+                    o.Gioitinh = e.Gioitinh;
+                    if (e.Password != null)
+                        o.Password = e.Password;
                     db.SaveChanges();
                     return true;
                 }                      
@@ -100,44 +109,35 @@ namespace QuanLyDiemSinhVien.Function
             return db.Diems.Where(x => x.Masv == masv).ToList();
         }
         /// <summary>
-        /// Danh sách điểm theo môn học của học sinh 
+        /// Danh sách các lớp học sinh đang học nếu stt=true, ngược lại là danh sách các lớp chưa học
         /// </summary>
         /// <param name="masv"></param>
-        /// <param name="mamon"></param>
+        /// <param name="stt"></param>
         /// <returns></returns>
-        public List<Diem> DSDiem(int masv, int mamon)
+        public List<ThongTinLop> DSLop(int masv, bool stt=true)
         {
-            return db.Diems.Where(x => x.Masv == masv && x.Mamon==mamon).ToList();
-        }
-        /// <summary>
-        /// Danh sách các lớp mà học sinh đang học
-        /// </summary>
-        /// <param name="masv"></param>
-        /// <returns></returns>
-        public List<Lop> DSLop(int masv)
-        {
-            var a = db.PhanLopSinhViens.Where(x => x.Masv == masv);
-            List<Lop> list = new List<Lop>();
+            var a = db.PhanLopSinhViens.Where(x => x.Masv == masv).Select(x=>x.Malop).ToList();
+            var b = db.PhanLopGiaoViens.Select(x=>x.Malop).ToList();
+            var c = b.Except(a).ToList();
+            if (!stt)
+            {
+                a = b.Except(a).ToList();
+            }
+            List<ThongTinLop> list = new List<ThongTinLop>();
             foreach(var item in a)
             {
-                list.Add(new f_lop().GetLop(item.Malop));
+                ThongTinLop l = new ThongTinLop();
+                l.malop = item;
+                l.tenlop = new f_lop().GetLop(item).Tenlop;
+                var o = db.PhanLopGiaoViens.FirstOrDefault(x=>x.Malop==item);
+                if (o != null)
+                    l.gv = new f_giaovien().GetGiaoVien(o.Magiaovien).Hoten;
+                else
+                    l.gv = "Chưa phân giáo viên";
+                l.tenmon = new f_monhoc().GetMonHoc(o.Mamon).Tenmon;
+                list.Add(l);
             }
             return list;
         }
-        /// <summary>
-        /// Danh sách các môn mà học sinh đang học
-        /// </summary>
-        /// <param name="masv"></param>
-        /// <returns></returns>
-/*        public List<MonHoc> DSMon(int masv)
-        {
-            var a = db.PhanLopSinhViens.Where(x => x.Masv == masv);
-            List<MonHoc> list = new List<MonHoc>();
-            foreach (var item in a)
-            {
-                list.Add(new f_monhoc().GetMonHoc(item.Mamon));
-            }
-            return list;
-        }*/
     }
 }

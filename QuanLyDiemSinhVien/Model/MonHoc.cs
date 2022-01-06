@@ -13,6 +13,7 @@ namespace QuanLyDiemSinhVien.Model
         public MonHoc()
         {
             Diems = new HashSet<Diem>();
+            PhanLopGiaoViens = new HashSet<PhanLopGiaoVien>();
         }
 
         [Key]
@@ -23,5 +24,8 @@ namespace QuanLyDiemSinhVien.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Diem> Diems { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhanLopGiaoVien> PhanLopGiaoViens { get; set; }
     }
 }

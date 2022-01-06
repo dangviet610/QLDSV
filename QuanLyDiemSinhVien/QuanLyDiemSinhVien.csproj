@@ -106,6 +106,18 @@
     <Compile Include="frm_Diem.Designer.cs">
       <DependentUpon>frm_Diem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_GiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_GiaoVien.Designer.cs">
+      <DependentUpon>frm_GiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SinhVien.Designer.cs">
+      <DependentUpon>frm_SinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_ThongTinGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,17 +143,15 @@
     <Compile Include="Function\f_sinhvien.cs" />
     <Compile Include="Function\f_taikhoan.cs" />
     <Compile Include="Model\Admin.cs" />
-    <Compile Include="Model\Context.cs" />
+    <Compile Include="Model\Context2.cs" />
     <Compile Include="Model\Diem.cs" />
     <Compile Include="Model\GiaoVien.cs" />
     <Compile Include="Model\Lop.cs" />
-    <Compile Include="Model\Model1.cs" />
     <Compile Include="Model\MonHoc.cs" />
     <Compile Include="Model\PhanLopGiaoVien.cs" />
     <Compile Include="Model\PhanLopSinhVien.cs" />
     <Compile Include="Model\SinhVien.cs" />
     <Compile Include="Model\sysdiagram.cs" />
-    <Compile Include="Model\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_BangDiem.resx">
@@ -167,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Diem.resx">
       <DependentUpon>frm_Diem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_GiaoVien.resx">
+      <DependentUpon>frm_GiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SinhVien.resx">
+      <DependentUpon>frm_SinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ThongTinGiaoVien.resx">
       <DependentUpon>frm_ThongTinGiaoVien.cs</DependentUpon>
