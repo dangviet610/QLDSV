@@ -32,11 +32,13 @@ namespace QuanLyDiemSinhVien
             this.label1 = new System.Windows.Forms.Label();
             this.dgDS = new System.Windows.Forms.DataGridView();
             this.lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.malop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTrove = new System.Windows.Forms.Button();
             this.btnPick = new System.Windows.Forms.Button();
             this.cbLoai = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgDS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +60,7 @@ namespace QuanLyDiemSinhVien
             this.dgDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lop,
+            this.malop,
             this.mon,
             this.gv});
             this.dgDS.Location = new System.Drawing.Point(15, 56);
@@ -68,6 +71,7 @@ namespace QuanLyDiemSinhVien
             this.dgDS.RowTemplate.Height = 24;
             this.dgDS.Size = new System.Drawing.Size(754, 300);
             this.dgDS.TabIndex = 1;
+            this.dgDS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GetIdLop);
             // 
             // lop
             // 
@@ -77,6 +81,16 @@ namespace QuanLyDiemSinhVien
             this.lop.MinimumWidth = 6;
             this.lop.Name = "lop";
             this.lop.ReadOnly = true;
+            // 
+            // malop
+            // 
+            this.malop.DataPropertyName = "malop";
+            this.malop.HeaderText = "malop";
+            this.malop.MinimumWidth = 6;
+            this.malop.Name = "malop";
+            this.malop.ReadOnly = true;
+            this.malop.Visible = false;
+            this.malop.Width = 125;
             // 
             // mon
             // 
@@ -112,6 +126,7 @@ namespace QuanLyDiemSinhVien
             // btnPick
             // 
             this.btnPick.BackColor = System.Drawing.Color.Tomato;
+            this.btnPick.Enabled = false;
             this.btnPick.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPick.Location = new System.Drawing.Point(15, 373);
             this.btnPick.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -121,7 +136,7 @@ namespace QuanLyDiemSinhVien
             this.btnPick.Text = "Đăng ký lớp học";
             this.btnPick.UseVisualStyleBackColor = false;
             this.btnPick.Visible = false;
-            this.btnPick.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnPick.Click += new System.EventHandler(this.btnDangky_Click);
             // 
             // cbLoai
             // 
@@ -136,11 +151,25 @@ namespace QuanLyDiemSinhVien
             this.cbLoai.TabIndex = 39;
             this.cbLoai.SelectedIndexChanged += new System.EventHandler(this.ChonLoai);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.YellowGreen;
+            this.button1.ForeColor = System.Drawing.Color.Blue;
+            this.button1.Location = new System.Drawing.Point(174, 373);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 44);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Xem";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frm_LopDangHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 435);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cbLoai);
             this.Controls.Add(this.btnPick);
             this.Controls.Add(this.btnTrove);
@@ -161,9 +190,11 @@ namespace QuanLyDiemSinhVien
         private System.Windows.Forms.DataGridView dgDS;
         private System.Windows.Forms.Button btnTrove;
         private System.Windows.Forms.Button btnPick;
+        private System.Windows.Forms.ComboBox cbLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn lop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn malop;
         private System.Windows.Forms.DataGridViewTextBoxColumn mon;
         private System.Windows.Forms.DataGridViewTextBoxColumn gv;
-        private System.Windows.Forms.ComboBox cbLoai;
+        private System.Windows.Forms.Button button1;
     }
 }

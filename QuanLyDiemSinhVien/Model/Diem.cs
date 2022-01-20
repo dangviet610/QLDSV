@@ -19,8 +19,14 @@ namespace QuanLyDiemSinhVien.Model
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Mamon { get; set; }
 
+        public int? Malop { get; set; }
+
         [Column("Diem")]
         public double? Diem1 { get; set; }
+
+        public virtual Lop Lop { get; set; }
+
+        public virtual Lop Lop1 { get; set; }
 
         public virtual MonHoc MonHoc { get; set; }
 

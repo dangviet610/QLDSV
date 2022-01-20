@@ -7,6 +7,16 @@ using QuanLyDiemSinhVien.Model;
 
 namespace QuanLyDiemSinhVien.Function
 {
+    public class ThongTinBangDiem
+    {
+        public int mamon { get; set; }
+        public int malop { get; set; }
+        public double? diem { get; set; }
+        public string tenmon { get; set; }
+        public string tenlop { set; get; }
+        public int masv { set; get; }
+        public string tensv { set; get; }
+    }
     public class f_diem
     {
         private Context db; 
@@ -18,9 +28,13 @@ namespace QuanLyDiemSinhVien.Function
         {
             return db.Diems.FirstOrDefault(x=>x.Masv==masv&&x.Mamon==mamon);
         }
-        public bool Them(int masv, int mamon, float diem)
+        public Diem GetDiem(int masv, int mamon, int malop)
         {
-            var o = GetDiem(masv,mamon);
+            return db.Diems.FirstOrDefault(x => x.Masv == masv && x.Mamon == mamon && x.Malop==malop);
+        }
+        public bool Them(int masv, int mamon, int malop, double diem)
+        {
+            var o = GetDiem(masv,mamon,malop);
             if (o == null)
             {
                 db.Diems.Add(new Diem { Masv = masv, Mamon = masv, Diem1 = diem });
@@ -29,7 +43,7 @@ namespace QuanLyDiemSinhVien.Function
             }
             return false;
         }
-        public bool Sua(int masv, int mamon,float diem)
+        public bool Sua(int masv, int mamon,double diem)
         {
             var o = GetDiem(masv, mamon);
             if (o != null)
@@ -40,9 +54,20 @@ namespace QuanLyDiemSinhVien.Function
             }
             return false;
         }
-        public bool Xoa(int masv, int mamon)
+        public bool Sua(int masv, int mamon, int malop, double diem)
         {
-            var o = GetDiem(masv, mamon);
+            var o = GetDiem(masv, mamon,malop);
+            if (o != null)
+            {
+                o.Diem1 = diem;
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool Xoa(int masv, int mamon,int malop)
+        {
+            var o = GetDiem(masv, mamon,malop);
             if (o != null)
             {
                 db.Diems.Remove(o);
@@ -50,6 +75,24 @@ namespace QuanLyDiemSinhVien.Function
                 return true;
             }
             return false;
+        }
+        public List<ThongTinBangDiem> BangDiem(int malop,int mamon)
+        {
+            List<ThongTinBangDiem> list = new List<ThongTinBangDiem>();
+            var l2 = db.Diems.Where(x=>x.Malop==malop&&x.Mamon==mamon).ToList();
+            foreach(var item in l2)
+            {
+                ThongTinBangDiem o = new ThongTinBangDiem();
+                o.masv = item.Masv;
+                o.tensv = new f_sinhvien().GetSinhVien(item.Masv).Hoten;
+                o.malop = (int)item.Malop;
+                o.tenlop = new f_lop().GetLop(o.malop).Tenlop;
+                o.mamon = item.Mamon;
+                o.tenmon = new f_monhoc().GetMonHoc(o.mamon).Tenmon;
+                o.diem = item.Diem1;
+                list.Add(o);
+            }
+            return list;
         }
      }
 }

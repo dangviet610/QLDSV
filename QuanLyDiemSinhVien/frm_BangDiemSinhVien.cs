@@ -10,16 +10,16 @@ using System.Windows.Forms;
 using QuanLyDiemSinhVien.Function;
 namespace QuanLyDiemSinhVien
 {
-    public partial class frm_BangDiem : Form
+    public partial class frm_BangDiemSinhVien : Form
     {
         private f_sinhvien f = new f_sinhvien();
         private f_monhoc fmon = new f_monhoc();
         private QuanLyDiemSinhVien.Model.SinhVien current;
-        public frm_BangDiem()
+        public frm_BangDiemSinhVien()
         {
             InitializeComponent();
         }
-        public frm_BangDiem(int masv)
+        public frm_BangDiemSinhVien(int masv)
         {
             InitializeComponent();
             current = f.GetSinhVien(masv);

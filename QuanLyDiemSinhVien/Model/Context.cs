@@ -30,6 +30,16 @@ namespace QuanLyDiemSinhVien.Model
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Lop>()
+                .HasMany(e => e.Diems)
+                .WithOptional(e => e.Lop)
+                .HasForeignKey(e => e.Malop);
+
+            modelBuilder.Entity<Lop>()
+                .HasMany(e => e.Diems1)
+                .WithOptional(e => e.Lop1)
+                .HasForeignKey(e => e.Malop);
+
+            modelBuilder.Entity<Lop>()
                 .HasMany(e => e.PhanLopGiaoViens)
                 .WithRequired(e => e.Lop)
                 .WillCascadeOnDelete(false);

@@ -49,7 +49,7 @@ namespace QuanLyDiemSinhVien
 
         private void btnBangdiem_Click(object sender, EventArgs e)
         {
-            frm_BangDiem frm = new frm_BangDiem(current.Masv);
+            frm_BangDiemSinhVien frm = new frm_BangDiemSinhVien(current.Masv);
             frm.ShowDialog();
         }
 
@@ -69,8 +69,7 @@ namespace QuanLyDiemSinhVien
                     LoadThongTin();
                     this.Refresh();
                 }
-            }
-                
+            }          
         }
     }
 }

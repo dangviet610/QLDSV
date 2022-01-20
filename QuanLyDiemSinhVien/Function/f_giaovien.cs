@@ -89,13 +89,20 @@ namespace QuanLyDiemSinhVien.Function
         /// </summary>
         /// <param name="magv"></param>
         /// <returns></returns>
-        public List<Lop> DSLop(int magv)
+        public List<ThongTinLop> DSLop(int magv,bool stt=true)
         {
             var a = db.PhanLopGiaoViens.Where(x => x.Magiaovien == magv);
-            List<Lop> list = new List<Lop>();
+            if(!stt)
+                a= db.PhanLopGiaoViens.Where(x => x.Magiaovien != magv);
+            List<ThongTinLop> list = new List<ThongTinLop>();
             foreach (var item in a)
             {
-                list.Add(new f_lop().GetLop(item.Malop));
+                ThongTinLop l = new ThongTinLop();
+                l.malop = item.Malop;
+                l.tenlop = new f_lop().GetLop(item.Malop).Tenlop;
+                l.mamon = item.Mamon;
+                l.tenmon = new f_monhoc().GetMonHoc(item.Mamon).Tenmon;
+                list.Add(l);
             }
             return list;
         }

@@ -281,7 +281,6 @@ namespace QuanLyDiemSinhVien
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(350, 30);
             this.txtEmail.TabIndex = 3;
-            this.txtEmail.Text = "theanh";
             // 
             // txtPass
             // 
@@ -381,7 +380,7 @@ namespace QuanLyDiemSinhVien
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(551, 504);
+            this.ClientSize = new System.Drawing.Size(1386, 504);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cbLoaiTKDK);
             this.Controls.Add(this.label11);

@@ -12,6 +12,7 @@ namespace QuanLyDiemSinhVien.Function
         public int malop { get; set; }
         public string tenlop { set; get; }
         public string tenmon { get; set; }
+        public int mamon { get; set; }
         public string gv { set; get; }
     }
     public class f_sinhvien
@@ -138,6 +139,19 @@ namespace QuanLyDiemSinhVien.Function
                 list.Add(l);
             }
             return list;
+        }
+        public bool DangKyLopHoc(int masv, int malop)
+        {
+            var sv = GetSinhVien(masv);
+            var lop = new f_lop().GetLop(malop);
+            if (sv != null && lop != null)
+            {
+                db.PhanLopSinhViens.Add(new PhanLopSinhVien { Masv = masv, Malop = malop });
+                db.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

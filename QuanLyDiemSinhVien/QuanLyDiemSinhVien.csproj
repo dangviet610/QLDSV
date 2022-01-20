@@ -58,17 +58,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_BangDiem.cs">
+    <Compile Include="frm_BangDiemSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_BangDiem.Designer.cs">
-      <DependentUpon>frm_BangDiem.cs</DependentUpon>
+    <Compile Include="frm_BangDiemSinhVien.Designer.cs">
+      <DependentUpon>frm_BangDiemSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_LopDangHoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_LopDangHoc.Designer.cs">
       <DependentUpon>frm_LopDangHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QuanLyLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QuanLyLopHoc.Designer.cs">
+      <DependentUpon>frm_QuanLyLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ThemDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ThemDiem.Designer.cs">
+      <DependentUpon>frm_ThemDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ThemSV.cs">
       <SubType>Form</SubType>
@@ -93,12 +105,6 @@
     </Compile>
     <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_DSLopDangDay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_DSLopDangDay.Designer.cs">
-      <DependentUpon>frm_DSLopDangDay.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Diem.cs">
       <SubType>Form</SubType>
@@ -130,11 +136,11 @@
     <Compile Include="frm_ThongTinSinhVien.Designer.cs">
       <DependentUpon>frm_ThongTinSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_XemDiem.cs">
+    <Compile Include="frm_QuanLyDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_XemDiem.Designer.cs">
-      <DependentUpon>frm_XemDiem.cs</DependentUpon>
+    <Compile Include="frm_QuanLyDiem.Designer.cs">
+      <DependentUpon>frm_QuanLyDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Function\f_diem.cs" />
     <Compile Include="Function\f_giaovien.cs" />
@@ -143,7 +149,7 @@
     <Compile Include="Function\f_sinhvien.cs" />
     <Compile Include="Function\f_taikhoan.cs" />
     <Compile Include="Model\Admin.cs" />
-    <Compile Include="Model\Context2.cs" />
+    <Compile Include="Model\Context.cs" />
     <Compile Include="Model\Diem.cs" />
     <Compile Include="Model\GiaoVien.cs" />
     <Compile Include="Model\Lop.cs" />
@@ -154,11 +160,20 @@
     <Compile Include="Model\sysdiagram.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frm_BangDiem.resx">
-      <DependentUpon>frm_BangDiem.cs</DependentUpon>
+    <EmbeddedResource Include="frm_BangDiemSinhVien.resx">
+      <DependentUpon>frm_BangDiemSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_LopDangHoc.resx">
       <DependentUpon>frm_LopDangHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuanLyDiem.resx">
+      <DependentUpon>frm_QuanLyDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuanLyLopHoc.resx">
+      <DependentUpon>frm_QuanLyLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ThemDiem.resx">
+      <DependentUpon>frm_ThemDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ThemSV.resx">
       <DependentUpon>frm_ThemSV.cs</DependentUpon>
@@ -171,9 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_DSLopDangDay.resx">
-      <DependentUpon>frm_DSLopDangDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Diem.resx">
       <DependentUpon>frm_Diem.cs</DependentUpon>

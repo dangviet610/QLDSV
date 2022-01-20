@@ -77,20 +77,5 @@ namespace QuanLyDiemSinhVien.Function
             }
             return list;
         }
-        /// <summary>
-        /// Danh sách học sinh đang học môn này
-        /// </summary>
-        /// <param name="mamon"></param>
-        /// <returns></returns>
-        /*public List<SinhVien> DSSinhVien(int mamon)
-        {
-            var a = db.PhanLopSinhViens.Where(x => x.Mamon == mamon);
-            List<SinhVien> list = new List<SinhVien>();
-            foreach (var item in a)
-            {
-                list.Add(new f_sinhvien().GetSinhVien(item.Masv));
-            }
-            return list;
-        }*/
     }
 }

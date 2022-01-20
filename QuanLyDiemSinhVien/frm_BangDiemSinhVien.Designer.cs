@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyDiemSinhVien
 {
-    partial class frm_BangDiem
+    partial class frm_BangDiemSinhVien
     {
         /// <summary>
         /// Required designer variable.
